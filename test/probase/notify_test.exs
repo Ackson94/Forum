@@ -39,12 +39,17 @@ defmodule Probase.NotifyTest do
 
     test "update_notification/2 with valid data updates the notification" do
       notification = notification_fixture()
-      assert {:ok, %Notification{} = notification} = Notify.update_notification(notification, @update_attrs)
+
+      assert {:ok, %Notification{} = notification} =
+               Notify.update_notification(notification, @update_attrs)
     end
 
     test "update_notification/2 with invalid data returns error changeset" do
       notification = notification_fixture()
-      assert {:error, %Ecto.Changeset{}} = Notify.update_notification(notification, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Notify.update_notification(notification, @invalid_attrs)
+
       assert notification == Notify.get_notification!(notification.id)
     end
 
@@ -96,12 +101,17 @@ defmodule Probase.NotifyTest do
 
     test "update_notification/2 with valid data updates the notification" do
       notification = notification_fixture()
-      assert {:ok, %Notification{} = notification} = Notify.update_notification(notification, @update_attrs)
+
+      assert {:ok, %Notification{} = notification} =
+               Notify.update_notification(notification, @update_attrs)
     end
 
     test "update_notification/2 with invalid data returns error changeset" do
       notification = notification_fixture()
-      assert {:error, %Ecto.Changeset{}} = Notify.update_notification(notification, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Notify.update_notification(notification, @invalid_attrs)
+
       assert notification == Notify.get_notification!(notification.id)
     end
 

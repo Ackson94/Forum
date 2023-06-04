@@ -17,4 +17,3 @@ defmodule Probase.Logs.User_logs do
     |> validate_required([:activity, :user_id])
   end
 end
-

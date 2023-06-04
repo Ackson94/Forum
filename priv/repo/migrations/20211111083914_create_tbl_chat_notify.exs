@@ -9,6 +9,7 @@ defmodule Probase.Repo.Migrations.CreateTblChatNotify do
       add :status, :string
       timestamps()
     end
+
     create unique_index(:tbl_chat_notify, [:name])
   end
 end

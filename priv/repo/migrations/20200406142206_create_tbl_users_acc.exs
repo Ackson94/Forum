@@ -15,10 +15,9 @@ defmodule Probase.Repo.Migrations.CreateTblUsersAcc do
       add :company_name, :string
       add :phone_no, :string
 
-
       timestamps()
     end
-    create unique_index(:tbl_users_acc, [:email])
 
+    create unique_index(:tbl_users_acc, [:email])
   end
 end

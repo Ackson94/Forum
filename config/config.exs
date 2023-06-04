@@ -26,8 +26,6 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-
-
 # Import environment specific config. Th is must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
@@ -42,8 +40,6 @@ import_config "#{Mix.env()}.exs"
 #     task: {Probase.Workers.Jobs, :get_pending_status, []}
 #   ]
 # ]
-
-
 
 # config :probase, Probase.Emails.Mailer,
 #   adapter: Bamboo.SMTPAdapter,

@@ -8,6 +8,5 @@ defmodule Probase.Repo.Migrations.CreateTblApiLogs do
 
       timestamps()
     end
-
   end
 end

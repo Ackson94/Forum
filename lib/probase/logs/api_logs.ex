@@ -13,6 +13,7 @@ defmodule Probase.Logs.Api_logs do
   def changeset(api_logs, attrs) do
     api_logs
     |> cast(attrs, [:response, :request])
+
     # |> validate_required([:response, :request])
   end
 end

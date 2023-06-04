@@ -23,12 +23,10 @@ defmodule ProbaseWeb.Router do
     plug(:put_secure_browser_headers)
   end
 
-
   pipeline :no_layout do
     plug :put_layout, false
   end
 
-  
   scope "/", ProbaseWeb do
     pipe_through([:session, :no_layout])
 
@@ -51,7 +49,6 @@ defmodule ProbaseWeb.Router do
     post "/show/:id", UserController, :file_uploads
     get "/forums_func/create", UserController, :forums_func
     post "/forums_func/create", UserController, :forums_func
- 
   end
 
   scope "/", ProbaseWeb do

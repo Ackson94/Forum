@@ -3,7 +3,6 @@ defmodule Probase.Accounts.User do
   import Ecto.Changeset
   @derive {Jason.Encoder, only: [:first_name, :last_name, :email, :id]}
 
-
   schema "tbl_users_acc" do
     field :auto_password, :string, default: "user"
     field :email, :string
@@ -38,7 +37,6 @@ defmodule Probase.Accounts.User do
       :phone_no
       # :company_name
     ])
-
     |> unique_constraint(:email, name: :tbl_users_email_index, message: " address already exists")
     |> put_pass_hash
   end
@@ -50,6 +48,4 @@ defmodule Probase.Accounts.User do
   defp put_pass_hash(changeset), do: changeset
 
   def encrypt_password(password), do: Base.encode16(:crypto.hash(:sha512, password))
-  
-
 end

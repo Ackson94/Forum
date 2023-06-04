@@ -33,22 +33,47 @@ defmodule Probase.Chats do
     Repo.all(query)
   end
 
-  def count_post(id), do: Message |> join(:left, [a], b in "chats", on: a.chat_id == b.id) |> where([a], a.chat_id == ^id) |> Repo.aggregate(:count, :chat_id)
+  def count_post(id),
+    do:
+      Message
+      |> join(:left, [a], b in "chats", on: a.chat_id == b.id)
+      |> where([a], a.chat_id == ^id)
+      |> Repo.aggregate(:count, :chat_id)
 
-  def last_post_name(chat_id), do: Enum.at(Enum.map(Repo.all(from m in Message, where: m.chat_id == ^chat_id), fn x -> %{chat_id: x.chat_id, user_id: x.user_id, content: x.content, doc_name: x.doc_name, doc_string: x.doc_string, doc_type: x.doc_type, document: x.document, id: x.id, inserted_at: NaiveDateTime.truncate(NaiveDateTime.utc_now, :second), updated_at: NaiveDateTime.truncate(NaiveDateTime.utc_now, :second)} end), -1) |> list_user()
+  def last_post_name(chat_id),
+    do:
+      Enum.at(
+        Enum.map(Repo.all(from m in Message, where: m.chat_id == ^chat_id), fn x ->
+          %{
+            chat_id: x.chat_id,
+            user_id: x.user_id,
+            content: x.content,
+            doc_name: x.doc_name,
+            doc_string: x.doc_string,
+            doc_type: x.doc_type,
+            document: x.document,
+            id: x.id,
+            inserted_at: NaiveDateTime.truncate(NaiveDateTime.utc_now(), :second),
+            updated_at: NaiveDateTime.truncate(NaiveDateTime.utc_now(), :second)
+          }
+        end),
+        -1
+      )
+      |> list_user()
 
   def list_user(query) do
- 
     case query do
       nil ->
         []
-      _->
-        result = from u in User, where: u.id == ^query.user_id, select: %{first_name: u.first_name}
+
+      _ ->
+        result =
+          from u in User, where: u.id == ^query.user_id, select: %{first_name: u.first_name}
+
         Repo.one(result)
         |> get_user_name()
     end
   end
-  
-  def get_user_name(name), do: name.first_name
 
+  def get_user_name(name), do: name.first_name
 end

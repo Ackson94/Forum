@@ -21,4 +21,3 @@ defmodule ProbaseWeb.UserView do
   def elipses(true), do: "..."
   def elipses(false), do: nil
 end
-  

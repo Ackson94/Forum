@@ -12,7 +12,6 @@ defmodule ProbaseWeb.Plugs.RequireAdminAccess do
     user_id = get_session(conn, :current_user) || get_session(conn, :current_client)
     user = user_id && Accounts.get_user_accounts!(user_id)
 
-
     with true <- not is_nil(user) && user.user_role != 1 do
       conn
       |> put_flash(:error, "Access denied!!!")
@@ -21,7 +20,6 @@ defmodule ProbaseWeb.Plugs.RequireAdminAccess do
     else
       _ ->
         conn
-
     end
   end
 end

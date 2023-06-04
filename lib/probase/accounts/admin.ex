@@ -21,8 +21,28 @@ defmodule Probase.Accounts.Admin do
   @doc false
   def changeset(admin, attrs) do
     admin
-    |> cast(attrs, [:first_name, :last_name, :email, :password, :user_type, :user_role, :status, :auto_password, :user_id])
-    |> validate_required([:first_name, :last_name, :email, :password, :user_type, :user_role, :status, :auto_password, :user_id])
+    |> cast(attrs, [
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :user_type,
+      :user_role,
+      :status,
+      :auto_password,
+      :user_id
+    ])
+    |> validate_required([
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :user_type,
+      :user_role,
+      :status,
+      :auto_password,
+      :user_id
+    ])
     |> validate_length(:password,
       min: 4,
       max: 40,

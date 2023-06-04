@@ -7,7 +7,11 @@ defmodule Probase.HistoryTest do
     alias Probase.History.Announce
 
     @valid_attrs %{first_name: "some first_name", name: "some name", status: "some status"}
-    @update_attrs %{first_name: "some updated first_name", name: "some updated name", status: "some updated status"}
+    @update_attrs %{
+      first_name: "some updated first_name",
+      name: "some updated name",
+      status: "some updated status"
+    }
     @invalid_attrs %{first_name: nil, name: nil, status: nil}
 
     def announce_fixture(attrs \\ %{}) do

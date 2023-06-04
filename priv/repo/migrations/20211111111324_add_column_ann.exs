@@ -11,9 +11,9 @@ defmodule Probase.Repo.Migrations.AddColumnAnn do
 
   def down do
     alter table(:tbl_messager_alert) do
-      remove (:doc_string)
-      remove (:doc_name)
-      remove (:doc_type)
+      remove :doc_string
+      remove :doc_name
+      remove :doc_type
     end
   end
 end

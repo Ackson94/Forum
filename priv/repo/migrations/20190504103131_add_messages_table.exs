@@ -9,7 +9,6 @@ defmodule Probase.Repo.Migrations.AddMessagesTable do
       add :doc_string, :text
       add :doc_name, :string
       add :doc_type, :string
- 
 
       timestamps()
     end

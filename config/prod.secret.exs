@@ -14,7 +14,6 @@ config :probase, Probase.Repo,
   pool_timeout: 500_000,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "50")
 
-
 # config :probase, Probase.Repo,
 #   # ssl: true,
 #   url: database_url,
@@ -28,16 +27,14 @@ config :probase, Probase.Repo,
 #     """
 
 config :probase, ProbaseWeb.Endpoint,
-      http: [port: 80,
-        transport_options: [socket_opts: [:inet6]]
-      ],
-      https: [
-        port: 443,
-        cipher_suite: :strong,
-        certfile: "priv/cert/fullchain.pem",
-        keyfile: "priv/cert/privkey.pem"
-      ],
-      secret_key_base: "KI1In9hMZrT8jJUMlq8ZvacrjnBQMTbCkYwCMpHhuojlWUBy/vTRp38rsqnvuXXO"
+  http: [port: 80, transport_options: [socket_opts: [:inet6]]],
+  https: [
+    port: 443,
+    cipher_suite: :strong,
+    certfile: "priv/cert/fullchain.pem",
+    keyfile: "priv/cert/privkey.pem"
+  ],
+  secret_key_base: "KI1In9hMZrT8jJUMlq8ZvacrjnBQMTbCkYwCMpHhuojlWUBy/vTRp38rsqnvuXXO"
 
 # ## Using releases (Elixir v1.9+)
 #

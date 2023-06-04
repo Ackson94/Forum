@@ -8,6 +8,5 @@ defmodule Probase.Repo.Migrations.CreateTblMessagerAlert do
       add :user_id, :integer
       timestamps()
     end
-
   end
 end

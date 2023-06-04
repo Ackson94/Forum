@@ -1,13 +1,14 @@
 use Mix.Config
 
 # Configure your database
-  config :probase, Probase.Repo,
+config :probase, Probase.Repo,
   username: "postgres",
   password: "Qwerty12",
   database: "probase_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -17,11 +18,11 @@ use Mix.Config
 config :probase, ProbaseWeb.Endpoint,
   http: [port: 80],
   https: [
-          port: 443,
-          cipher_suite: :strong,
-          certfile: "priv/cert/fullchain.pem",
-          keyfile: "priv/cert/privkey.pem"
-        ],
+    port: 443,
+    cipher_suite: :strong,
+    certfile: "priv/cert/fullchain.pem",
+    keyfile: "priv/cert/privkey.pem"
+  ],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

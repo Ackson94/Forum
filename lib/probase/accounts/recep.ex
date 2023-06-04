@@ -20,8 +20,28 @@ defmodule Probase.Accounts.Recep do
 
   def changeset(admin, attrs) do
     admin
-    |> cast(attrs, [:first_name, :last_name, :email, :password, :user_type, :user_role, :status, :auto_password, :user_id])
-    |> validate_required([:first_name, :last_name, :email, :password, :user_type, :user_role, :status, :auto_password, :user_id])
+    |> cast(attrs, [
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :user_type,
+      :user_role,
+      :status,
+      :auto_password,
+      :user_id
+    ])
+    |> validate_required([
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :user_type,
+      :user_role,
+      :status,
+      :auto_password,
+      :user_id
+    ])
     |> validate_length(:password,
       min: 4,
       max: 40,
@@ -53,6 +73,4 @@ defmodule Probase.Accounts.Recep do
   defp put_pass_hash(changeset), do: changeset
 
   def encrypt_password(password), do: Base.encode16(:crypto.hash(:sha512, password))
-
-
 end

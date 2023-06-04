@@ -29,7 +29,45 @@ defmodule Probase.Accounts.Employees do
   @doc false
   def changeset(employees, attrs) do
     employees
-    |> cast(attrs, [:name, :"d.o.b", :sex, :nrc_id, :supervisor, :last_name, :ssn, :cell, :email, :address, :nationality, :position, :date_engaged, :employment_duration, :top_skill, :qualification, :instituition, :emp_id, :department])
-    |> validate_required([:name, :"d.o.b", :sex, :nrc_id, :ssn, :cell, :email, :address, :nationality, :position, :date_engaged, :employment_duration, :top_skill, :qualification, :instituition, :emp_id, :department])
+    |> cast(attrs, [
+      :name,
+      :"d.o.b",
+      :sex,
+      :nrc_id,
+      :supervisor,
+      :last_name,
+      :ssn,
+      :cell,
+      :email,
+      :address,
+      :nationality,
+      :position,
+      :date_engaged,
+      :employment_duration,
+      :top_skill,
+      :qualification,
+      :instituition,
+      :emp_id,
+      :department
+    ])
+    |> validate_required([
+      :name,
+      :"d.o.b",
+      :sex,
+      :nrc_id,
+      :ssn,
+      :cell,
+      :email,
+      :address,
+      :nationality,
+      :position,
+      :date_engaged,
+      :employment_duration,
+      :top_skill,
+      :qualification,
+      :instituition,
+      :emp_id,
+      :department
+    ])
   end
 end

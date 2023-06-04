@@ -1,4 +1,3 @@
 defmodule ProbaseWeb.SessionView do
-    use ProbaseWeb, :view
-  end
-  
+  use ProbaseWeb, :view
+end

@@ -9,6 +9,5 @@ defmodule Probase.Repo.Migrations.CreateTblHistoryAnnounce do
 
       timestamps()
     end
-
   end
 end

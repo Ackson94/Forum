@@ -27,17 +27,19 @@ defmodule Probase.Chats.Message do
     |> validate_required([:chat_id, :user_id])
   end
 
-
   defp file_upload(changeset) do
     file_path = get_field(changeset, :document)
-    case file_path do
-      %{content_type: type, filename: filename}  ->
 
-        change(changeset, doc_string: get_signiture_string(file_path), doc_name: filename, doc_type: type )
+    case file_path do
+      %{content_type: type, filename: filename} ->
+        change(changeset,
+          doc_string: get_signiture_string(file_path),
+          doc_name: filename,
+          doc_type: type
+        )
 
       _ ->
         changeset
-      
     end
   end
 

@@ -12,6 +12,5 @@ defmodule Probase.Repo.Migrations.CreateTblClients do
 
       timestamps()
     end
-
   end
 end

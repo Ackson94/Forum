@@ -14,11 +14,13 @@ defmodule Probase.Accounts.Client do
 
     timestamps()
   end
+
   @doc false
   def changeset(client, attrs) do
     client
     |> cast(attrs, [:company_name, :email, :phone, :country, :address, :po_box, :sector_code])
     |> validate_required(:email, message: "Email Already Exist")
+
     # |> unique_constraint(:email, name: :tbl_clients_email_index, message: " address already exists")
   end
 end

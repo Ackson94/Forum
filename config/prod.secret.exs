@@ -31,8 +31,6 @@ config :probase, ProbaseWeb.Endpoint,
   https: [
     port: 443,
     cipher_suite: :strong,
-    certfile: "priv/cert/fullchain.pem",
-    keyfile: "priv/cert/privkey.pem"
   ],
   secret_key_base: ""
 

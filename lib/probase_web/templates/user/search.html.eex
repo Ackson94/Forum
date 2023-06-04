@@ -1,0 +1,93 @@
+
+<main id="js-page-content" role="main" class="page-content">
+    <%= if @name_forum == [] do %>
+        <div class="col-xl-12">
+            <div id="panel-3" class="panel">
+                <div class="panel-hdr">
+                    <h2>
+                        Search <span class="fw-300"><i>Results</i></span>
+                    </h2>
+                    <div class="panel-toolbar">
+                    
+                    </div>
+                </div>
+                <div class="panel-container show">
+                    <div class="panel-content" style="text-align: center;">
+                        <h1 class="frame-heading">Not Found</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% else %>
+    <div class="row">
+            <div class="col-xl-12">
+                <form action="<%= Routes.user_path(@conn, :search_query) %>">
+                    <div class="input-group input-group-lg mb-g">
+                        <input type="text" name="name" class="form-control shadow-inset-2" placeholder="Search Forum">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fal fa-search"></i></span>
+                        </div>
+                    </div>
+                </form>
+                <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                        <div class="col">
+                            <span class="h6 font-weight-bold text-lowercase">Search Topics</span>
+                        </div>
+                    </div>
+                    <div class="panel-container show">
+                        <div class="panel-content">
+                            <div style="margin-bottom: 40px;">
+                            </div>
+                            <!-- datatable start -->
+                            <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                                <thead>
+                                    <tr>
+                                        <th>Forum Name</th>
+                                        <th>Posted By</th>
+                                        <th>Replies</th>
+                                        <th>Date/Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%= for chat <- @name_forum do %>
+                                    <tr>
+                                        <td >
+                                            <div class="d-flex">
+                                                <span class="">
+                                                        <span class="mr-2">
+                                                            <img class="profile-image rounded-circle" alt="App user" src="<%= Routes.static_path(@conn, "/images/avatar/1.png") %>">
+                                                        </span>
+                                                </span>
+                                                <div class="d-inline-flex flex-column">
+                                                    <a href="javascript:void(0)" class="fs-lg fw-500 d-block">
+                                                    <%= link(chat.name, to: "/show/#{chat.id}") %> <span class="badge badge-warning rounded"></span>
+                                                    </a>
+                                                  
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="d-block text-muted"><i><%= chat.first_name %> </i></span>
+                                        </td>
+                                        <td>
+                                            <span style="color: #888;"><%= Probase.Chats.count_post(chat.id)%></span>
+                                        </td>
+                                        <td>
+                                            <div class="text-muted small text-truncate">
+                                                <%= chat.date %><a href="javascript:void(0)" class="text-info"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <% end %>
+</main>
+
+<script src="/js/vendors.bundle.js"></script>
+<script type="text/javascript">

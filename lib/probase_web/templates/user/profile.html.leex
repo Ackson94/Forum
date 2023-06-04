@@ -1,0 +1,187 @@
+<link rel="stylesheet" media="screen, print" href="/profile/css/vendors.bundle.css">
+<link rel="stylesheet" media="screen, print" href="/profile/css/app.bundle.css">
+<!-- Place favicon.ico in the root directory -->
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/profile/img/favicon/favicon-32x32.png">
+<link rel="mask-icon" href="/profile/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<!-- Optional: page related CSS-->
+<link rel="stylesheet" media="screen, print" href="/profile/css/fa-brands.css">
+<link rel="stylesheet" media="screen, print" href="/profile/css/fa-solid.css">
+
+<main id="js-page-content" role="main" class="page-content">
+    <ol class="breadcrumb page-breadcrumb">
+       
+        <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
+    </ol>
+    <div class="subheader">
+        <h1 class="subheader-title">
+            <i class='subheader-icon fal fa-plus-circle'></i> Profile
+            <small>
+                Profile layout
+            </small>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-xl-3 order-lg-1 order-xl-1">
+            <!-- profile summary -->
+            <div class="card mb-g rounded-top">
+                <div class="row no-gutters row-grid">
+                    <div class="col-12">
+                        <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                            <img src="<%= Routes.static_path(@conn, "/images/avatar/1.png") %>" class="rounded-circle shadow-2 img-thumbnail" alt="">
+                            <h5 class="mb-0 fw-700 text-center mt-3">
+                                <%= "#{String.capitalize(@conn.assigns.user.first_name)}"%>
+                                <small class="text-muted mb-0">   <%= "#{String.capitalize(@conn.assigns.user.email)}"%></small>
+                            </h5>
+                            <div class="mt-4 text-center demo">
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#3b5998">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#38A1F3">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#db3236">
+                                    <i class="fab fa-google-plus"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#0077B5">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#000000">
+                                    <i class="fab fa-reddit-alien"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#00AFF0">
+                                    <i class="fab fa-skype"></i>
+                                </a>
+                                <a href="javascript:void(0);" class="fs-xl" style="color:#0063DC">
+                                    <i class="fab fa-flickr"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                764
+                                <small class="text-muted mb-0">Post</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                1,673
+                                <small class="text-muted mb-0">Users</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-3 text-center">
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold"  type="button"
+                                data-id=""
+                                data-first_name=""
+                                data-toggle="modal" data-target="#add_profile">Chanage profile</a> <span class="text-primary d-inline-block mx-3">&#9679;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- photos -->
+       
+        </div>
+        <div class="col-lg-12 col-xl-6 order-lg-3 order-xl-2">
+            <div class="card border mb-g">
+                <div class="card-body pl-4 pt-4 pr-4 pb-0">
+                    <div class="d-flex flex-column">
+                        <div class="border-0 flex-1 position-relative shadow-top">
+                            <div class="pt-2 pb-1 pr-0 pl-0 rounded-0 position-relative" tabindex="-1">
+                                <span class="profile-image rounded-circle d-block position-absolute" style="background-image:url('<%= Routes.static_path(@conn, "/images/avatar/1.png") %>'); background-size: cover;"></span>
+                                <div class="pl-5 ml-5">
+                                    <textarea class="form-control border-0 p-0 fs-xl" rows="4" placeholder="What's on your mind?..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="height-8 d-flex flex-row align-items-center flex-wrap flex-shrink-0">
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl width-1 mr-1" data-toggle="tooltip" data-original-title="More options" data-placement="top">
+                                <i class="fal fa-ellipsis-v-alt color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Attach files" data-placement="top">
+                                <i class="fal fa-paperclip color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Insert photo" data-placement="top">
+                                <i class="fal fa-camera color-fusion-300"></i>
+                            </a>
+                            <button class="btn btn-info shadow-0 ml-auto">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+      
+        </div>
+        <div class="col-lg-6 col-xl-3 order-lg-2 order-xl-3">
+            <!-- add : -->
+            <div class="card mb-2">
+                <div class="card-body">
+                    <a href="javascript:void(0);" class="d-flex flex-row align-items-center">
+                        <div class='icon-stack display-3 flex-shrink-0'>
+                            <i class="fal fa-circle icon-stack-3x opacity-100 color-primary-400"></i>
+                            <i class="fas fa-graduation-cap icon-stack-1x opacity-100 color-primary-500"></i>
+                        </div>
+                        <div class="ml-3">
+                            <strong>
+                                Add Qualifications
+                            </strong>
+                            <br>
+                            Adding qualifications will help gain more clients
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card mb-g">
+                <div class="card-body">
+                    <a href="javascript:void(0);" class="d-flex flex-row align-items-center">
+                        <div class='icon-stack display-3 flex-shrink-0'>
+                            <i class="fal fa-circle icon-stack-3x opacity-100 color-warning-400"></i>
+                            <i class="fas fa-handshake icon-stack-1x opacity-100 color-warning-500"></i>
+                        </div>
+                        <div class="ml-3">
+                            <strong>
+                                Add Skills
+                            </strong>
+                            <br>
+                            <ul style="list-style:none;">
+                                <li>Role: <%= "#{@conn.assigns.user.user_role}"%></li>
+                                <br>
+                                <li>Contact: <%= "#{@conn.assigns.user.phone_no}"%></li>
+                                <br>
+                                <li>Company Name: <%= "#{@conn.assigns.user.company_name}"%></li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="modal fade" id="add_profile" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Profile</h5>
+                </div>
+                    <form enctype="multipart/form-data" action="<%= Routes.user_path(@conn, :upload_profile) %>" method="POST">
+                        <div class="form-group">
+                            <input type="hidden" name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token()%>">
+                            <input type="hidden" name="id" id="id" value="<%= @user.id %>">
+                            <input type="file"   name="document"  id="file_name" style="margin:20px;">
+                            <button type="submit" id="add_user_profilke" style="position:absolute; left: 90%; margin-top:15px;" class="fas fa-location-arrow input-group-text send_btn">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/profile/js/vendors.bundle.js"></script>
+<script src="/profile/js/app.bundle.js"></script>

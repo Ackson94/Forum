@@ -1,0 +1,71 @@
+<main id="js-page-content" role="main" class="page-content">
+    <div class="subheader-block" id="">
+            <li class="position-absolute pos-top pos-right d-none d-sm-block" style="color:black;"><span class="js-get-date"></span> <span id="time" </span></li>
+        </div>
+    <div class="subheader">
+        <h1 class="subheader-title">
+             Check Announcement
+            <small>
+                Previously Announcement
+            </small>
+        </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12" style="margin-right: auto; margin-left: auto">
+            <div id="panel-1" class="panel">
+                <div class="panel-hdr">
+                    <h2>
+                             List <span class="fw-300"><i>of Previously Announcement</i></span>
+                    </h2>
+                    <div class="panel-toolbar">
+                        <button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
+                        <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
+                        <button class="btn btn-panel" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"></button>
+                    </div>
+                </div>
+                <div class="panel-container show">
+                    <div class="panel-content">
+                        <div style="margin-bottom: 40px;">
+                            
+                        </div>
+                        <!-- datatable start -->
+                        <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                            <input type="hidden" id="csrf" name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token()%>">
+                            <thead class="bg-primary-600" style="background: #faf8fb;color:#000;">
+                                <tr>
+                                     <th>Previously Announcement</th>
+                                     <th>Announce By</th>
+                                     <th>Q&A</th>
+                                     <th>Date</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                <%= for list <- @prev do %>
+                                    <tr>
+                                        <td>
+                                            <%= list.name %> 
+                                        </td> 
+                                        <td>
+                                             <%= list.first_name %> 
+                                        </td>
+                                        <td>
+                                           <a href="#">Deny access</a>
+                                        </td>
+                                        <td>
+                                             <%= list.inserted_at %> 
+                                        </td>
+                                    </tr>
+                                  <% end %>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+ 
+<script src="/js/vendors.bundle.js"></script>
+<script type="text/javascript">
+<script src="<%= Routes.static_path(@conn, "/js/vendors.bundle.js") %>"></script>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content="Page Titile">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <title>Reports: Login</title>
+        <!-- base css -->
+        <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/vendors.bundle.css") %>" />
+        <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/default.css") %>" />
+         <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/load.css") %>" />
+        <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/app.bundle.css") %>" />
+        <link rel="mask-icon" color="#5bbad5" href="<%= Routes.static_path(@conn, "/css/datagrid/datatables/datatables.bundle.css") %>" />
+        <link rel="apple-touch-icon" sizes="180x180" href="<%= Routes.static_path(@conn, "/img/favicon/apple-touch-icon.png") %>" />
+        <style type="text/css">
+            .help-block{
+                color: #000000;
+            }
+            .form-control{
+                background-color: #fffffd;
+            }
+            html body {
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+    <header class="page-header" role="banner"  style="background-color: #ffffff;  ">
+        <div class="page-logo">
+
+
+            <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative"  data-toggle="modal" data-target="#modal-shortcut">
+                <img src="<%= Routes.static_path(@conn, "/images/logos/2.png") %>" alt="ProBASE Logo" aria-roledescription="logo">
+                <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+            </a>
+
+        </div>
+        <!-- Mobile button appears during mobile width -->
+        <div class="hidden-lg-up">
+            <a href="#" class="btn btn-default press-scale-down waves-effect waves-themed" data-action="toggle" data-class="mobile-nav-on">
+                <i class="ni ni-menu"></i>
+            </a>
+        </div>
+        <div class="ml-auto d-flex">
+            <!-- app notification -->
+            <div class="nav-link">
+                <a href="#" class="client-header-icon" data-toggle="dropdown"></a>
+                <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
+                    <div class="dropdown-header bg-trans-gradient d-flex justify-content-center align-items-center rounded-top mb-2">
+                        <h4 class="m-0 text-center color-white">
+                            <small class="mb-0 opacity-80">Notifications</small>
+                        </h4>
+                    </div>
+                    <ul class="nav nav-tabs nav-tabs-clean" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link px-4 fs-md js-waves-on fw-500" data-toggle="tab" href="#tab-messages" data-i18n="drpdwn.messages">Messages</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content tab-notification">
+                        <div class="tab-pane" id="tab-messages" role="tabpanel">
+                            <div class="custom-scroll h-100">
+                                <ul class="notification">
+                                    <li class="unread">
+                                        <a href="#" class="d-flex align-items-center" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-original-title="" data-content=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-2 px-3 bg-faded d-block rounded-bottom text-right border-faded border-bottom-0 border-right-0 border-left-0"></div>
+                </div>
+            </div>
+            <!-- app notification -->
+            <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
+
+                <img style="float: left;" src="<%= Routes.static_path(@conn, "/images/logos/2.png" ) %>" alt="ProBASE Logo" aria-roledescription="logo">
+            </div>
+
+            <!-- /Profile dropdown-->
+
+        </div>
+    </header>
+        <div class="page-wrapper">
+            <div class="page-inner bg-brand-gradient">
+
+                <div class="page-content-wrapper bg-transparent m-0">
+
+
+                    <div class="flex-1" id="login_background">
+                        <br><br><br><br><br><br>
+
+                        <h1 style="font-size: 50px; color: whitesmoke; margin-right: 40px; text-align: -webkit-center;">ProBASE Forum </h1>
+                           <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
+                            <div class="row">
+
+                                <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 ml-auto">
+                                    <!-- To Handle Flashes -->
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-offset-2">
+                                            <div class="form-group">
+                                                <%= if get_flash(@conn, :info) do %>
+                                                    <div class="alert alert-success alert-styled-left">
+                                                    <button type="button" class="close" data-dismiss="alert">&times; <span class="sr-only">Close</span></button>
+                                                    <%= get_flash(@conn, :info) %>
+                                                    </div>
+                                                <% end %>
+                                                <%= if get_flash(@conn, :error) do %>
+                                                    <div class="alert alert-danger alert-styled-left">
+                                                    <button type="button" class="close" data-dismiss="alert">&times; <span class="sr-only">Close</span></button>
+                                                     <%= get_flash(@conn, :error) %>
+                                                    </div>
+                                                <% end %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End flahses -->
+
+                                    <div class="card p-4 bg-faded" style="background-color: #ffffff; border-radius: 25px;">
+                                        <form id="js-login" novalidate="" action="<%= Routes.session_path(@conn, :create)%>" method="POST">
+                                            <div class="form-group">
+                                                <label class="form-label" for="username">Email</label>
+                                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required>
+                                                <input type="hidden" name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token()%>">
+                                                <div class="invalid-feedback"></div>
+                                                <div class="help-block">Your email address.</div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="form-label" for="password">Password</label>
+                                                <input type="password"  name="password"  id="myInput" class="form-control form-control-lg" placeholder="Password" required>
+                                                <div class="invalid-feedback">Sorry, you missed this one.</div>
+                                                <div class="help-block">Your password</div><br>
+                                                <input type="checkbox" onclick="myFunction()">  &nbsp; Show Password
+                                                <div class="help-block"></div>
+                                            </div>
+
+                                            <div class="form-group text-left" style="float: right; margin-top:-40px; color: black;">
+                                                <a href="<%= Routes.user_path(@conn, :forgot_password) %>" style="color:black;">Forgot password?</a>
+                                            </div>
+
+
+
+                                            <div class="row no-gutters" style="display: block;">
+                                                <div class="">
+                                                    <button type="submit" class="btn bg-primary-900 btn-block btn-md" id="login" style="background-color:darkorange;">Login</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="col-md-4 ml-auto"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="<%= Routes.static_path(@conn, "/js/vendors.bundle.js") %>"></script>
+    <script src="<%= Routes.static_path(@conn, "/js/app.bundle.js") %>"></script>
+    <script src="<%= Routes.static_path(@conn, "/js/statistics/flot/flot.bundle.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+        $("#js-login-btn").click(function(event)
+        {
+
+            // Fetch form to apply custom Bootstrap validation
+            var form = $("#js-login")
+
+            if (form[0].checkValidity() === false)
+            {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.addClass('was-validated');
+            // Perform ajax submit here...
+        });
+    </script>
+
+
+    <script>
+       function myFunction() {
+          var x = document.getElementById("myInput");
+         if (x.type === "password") {
+             x.type = "text";
+              } else {
+               x.type = "password";
+          }
+       }
+     </script>
+
+    </body>
+</html>

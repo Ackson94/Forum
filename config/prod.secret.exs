@@ -34,7 +34,7 @@ config :probase, ProbaseWeb.Endpoint,
     certfile: "priv/cert/fullchain.pem",
     keyfile: "priv/cert/privkey.pem"
   ],
-  secret_key_base: "KI1In9hMZrT8jJUMlq8ZvacrjnBQMTbCkYwCMpHhuojlWUBy/vTRp38rsqnvuXXO"
+  secret_key_base: ""
 
 # ## Using releases (Elixir v1.9+)
 #

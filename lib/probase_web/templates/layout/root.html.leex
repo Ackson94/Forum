@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= csrf_meta_tag() %>
-    <%= live_title_tag assigns[:page_title] || "Probase", suffix: " · Forums" %>
+    <%= live_title_tag assigns[:page_title] || "", suffix: " · Forums" %>
   <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/vendors.bundle.css") %>" />
     <link rel="stylesheet" media="screen, print" href="<%= Routes.static_path(@conn, "/css/app.bundle.css") %>" />
@@ -25,7 +25,7 @@
   </head>
   <body>
 
-  
+
 <div class="page-wrapper">
             <div class="page-inner">
                 <div class="page-content-wrapper">
@@ -40,19 +40,19 @@
                                 <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
                             </a>
                         </div>
-                      
+
                         <ul id="js-nav-menu" class="nav-menu">
                             <li>
                                 <a href="<%= Routes.user_path(@conn, :dashboard)%>" style="hover: none;" title="Forum" data-filter-tags="ui components">
-                                    <span class="nav-link-text" data-i18n="nav.ui_components" style="font-size: 25px;"><span style="color:black;font-weight:bold;"> Pro</span><span style="color:orange;font-weight:bold;">BASE</span> Forum</span>
+                                    <span class="nav-link-text" data-i18n="nav.ui_components" style="font-size: 25px;"><span style="color:black;font-weight:bold;"> </span><span style="color:orange;font-weight:bold;"></span> Forum</span>
                                 </a>
                             </li>
-                            
+
                         </ul>
                         <ul id="js-nav-menu" class="nav-menu">
                             <li>
                                 <a href="<%= Routes.user_path(@conn, :dashboard)%>" title="Dashboard" data-filter-tags="ui components">
-                                   
+
                                     <span class="nav-link-text" data-i18n="nav.ui_components">Dashboard</span>
                                 </a>
                             </li>
@@ -66,9 +66,9 @@
                             </form>
                         </div>
                         <div class="ml-auto d-flex">
-                     
+
                             <div>
-                             
+
                                 <div class="dropdown-menu dropdown-menu-animated w-auto h-auto">
                                     <div class="dropdown-header bg-trans-gradient d-flex justify-content-center align-items-center rounded-top">
                                         <h4 class="m-0 text-center color-white">
@@ -299,14 +299,14 @@
                         <span id="saving"></span>
                     </div>
                             <div>
-                         
+
                                 <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
                                     <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
                                         <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
                                             <span class="mr-2">
                                                 <img src="img/demo/avatars/avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
                                             </span>
-                                         
+
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
@@ -452,16 +452,16 @@
                     <main id="js-page-content" role="main" class="page-content">
                         <%= @inner_content %>
                     </main>
-          
+
                 </div>
             </div>
         </div>
-    
+
             <footer class="page-footer" role="contentinfo">
                 <div class="d-flex align-items-center flex-1 text-muted">
                      <span class="hidden-md-down fw-700"   style="color:white;">2021 © Reports Powered By&nbsp;
-                         <a href='http://www.probasegroup.com/' class='text-primary fw-500' title='proBASE' target='_blank'>
-                             <img class="img-responsive" width="100" alt="proBASE Logo" src="<%= Routes.static_path(@conn, "/images/logos/2.png") %>">
+                         <a href='' class='text-primary fw-500' title='proBASE' target='_blank'>
+                             <img class="img-responsive" width="100" alt="" src="">
                          </a>
                      </span>
                 </div>
@@ -483,7 +483,7 @@
             var user_role = button.data('user_role')
             var company_name = button.data('company_name')
             var phone_no = button.data('phone_no')
-            
+
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #first_name').val(first_name);
@@ -495,6 +495,6 @@
         });
     });
 </script>
-  
+
 </body>
 </html>

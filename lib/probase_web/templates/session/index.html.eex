@@ -35,7 +35,7 @@
 
 
             <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative"  data-toggle="modal" data-target="#modal-shortcut">
-                <img src="<%= Routes.static_path(@conn, "/images/logos/2.png") %>" alt="ProBASE Logo" aria-roledescription="logo">
+                <img src="<%= Routes.static_path(@conn, "/") %>" alt="" aria-roledescription="logo">
                 <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                 <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
             </a>
@@ -76,14 +76,7 @@
                     <div class="py-2 px-3 bg-faded d-block rounded-bottom text-right border-faded border-bottom-0 border-right-0 border-left-0"></div>
                 </div>
             </div>
-            <!-- app notification -->
-            <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
-
-                <img style="float: left;" src="<%= Routes.static_path(@conn, "/images/logos/2.png" ) %>" alt="ProBASE Logo" aria-roledescription="logo">
-            </div>
-
             <!-- /Profile dropdown-->
-
         </div>
     </header>
         <div class="page-wrapper">
@@ -95,7 +88,7 @@
                     <div class="flex-1" id="login_background">
                         <br><br><br><br><br><br>
 
-                        <h1 style="font-size: 50px; color: whitesmoke; margin-right: 40px; text-align: -webkit-center;">ProBASE Forum </h1>
+                        <h1 style="font-size: 50px; color: whitesmoke; margin-right: 40px; text-align: -webkit-center;"> Forum </h1>
                            <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
                             <div class="row">
 
@@ -148,7 +141,7 @@
 
                                             <div class="row no-gutters" style="display: block;">
                                                 <div class="">
-                                                    <button type="submit" class="btn bg-primary-900 btn-block btn-md" id="login" style="background-color:darkorange;">Login</button>
+                                                    <button type="submit" class="btn bg-primary-900 btn-block btn-md" id="login" style="background-color: black;">Login</button>
                                                 </div>
                                             </div>
                                         </form>

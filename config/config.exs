@@ -30,28 +30,3 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
-# Configure Cron Jobs
-# config :probase, Probase.Scheduler,
-# overlap: false,
-# timeout: 30_000,
-# jobs: [
-#   get_pending_status: [
-#     schedule: "@daily",
-#     task: {Probase.Workers.Jobs, :get_pending_status, []}
-#   ]
-# ]
-
-# config :probase, Probase.Emails.Mailer,
-#   adapter: Bamboo.SMTPAdapter,
-#   server: "smtp.gmail.com",
-#   port: 587,
-#   # or {:system, "SMTP_USERNAME"}
-#   username: "Probase@probasegroup.com",
-#   # or {:system, "SMTP_PASSWORD"}
-#   password: "Password123$",
-#   # can be `:always` or `:never`
-#   tls: :if_available,
-#   allowed_tls_versions: [:tlsv1, :"tlsv1.1", :"tlsv1.2"],
-#   # can be `true`
-#   ssl: false,
-#   retries: 2

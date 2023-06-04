@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :probase, Probase.Repo,
   username: "postgres",
-  password: "Qwerty12",
+  password: "",
   database: "probase_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

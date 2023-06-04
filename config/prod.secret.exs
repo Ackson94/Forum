@@ -5,8 +5,8 @@
 use Mix.Config
 
 config :probase, Probase.Repo,
-  username: "root",
-  password: "Qwerty12",
+  username: "postgres",
+  password: "",
   database: "probase_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
